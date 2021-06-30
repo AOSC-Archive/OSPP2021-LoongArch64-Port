@@ -4,6 +4,7 @@ I will use LFS development to build a clean native toolchain for LoongArch64.
 The work this week should finish building "6. Cross Compiling Temporary Tools" in LFS.
 I will write some build scripts to specify the target triple，-march，-mabi.
 I will using GCC, binutils, and glibc source git bundles which are rebased to newer version by xen0n.
+The source code will locate in /mnt/lfs/sources.
 However, due to Loongson Inc. and sensitive period, the source code now is not available in public.
 I will try to be generic about the compile flags, considering compatibility for future use.
 Nonetheless, I will first scrutinize the gcc source code, find the documentation for LoongArch64, 
