@@ -1,3 +1,4 @@
-# OSPP2021-LoongArch64-port-weekly-report
-Weekly report for AOSC OS LoongArch64 port in OSPP 2021.
-Updated weekly plans and reports should normally be written before Saturday.
+OSPP 2021 - AOSC OS LoongArch64 Port
+====================================
+
+This repository contains weekly reports for OSPP 2021 project - AOSC OS LoongArch64 port. Weekly plans and reports to be sumitted every Saturday.
