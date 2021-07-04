@@ -57,11 +57,13 @@ ValueError: bad ulps line: ifloat: 1
 需要手动修改源代码，此时通过导师帮助，用`sed -e '/^idouble:/d' -e '/^ifloat:/d' -e '/^ildouble/d' -i sysdeps/loongarch/lp64/libm-test-ulps` 解决。  
 之后在 LFS readelf dummy.c 里面出现，`[Requesting program interpreter: /liblp64/ld.so.1]`，这个liblp64 是 loongarch64 的定义，但是一般来说改成 lib64 才符合POSIX规范。  
 是群友的GCC port不完全，有个泄露的patch没有打上，打上之后便是跟Loongnix中一样：`[Requesting program interpreter: /lib64/ld.so.1]`。
-编译m4, ncurses等一系列软件的时候config.guess 版本过老，于是直接在`build-aux`或者其他装有config.guess和config.sub的folder里面去替代。
+编译m4, ncurses等一系列软件的时候config.guess 版本过老，于是直接在`build-aux`或者其他装有config.guess和config.sub的folder里面去替代, 如下。
 ```
 wget -O config.guess 'https://git.savannah.gnu.org/gitweb/?p=config.git;a=blob_plain;f=config.guess;hb=HEAD'
 wget -O config.sub 'https://git.savannah.gnu.org/gitweb/?p=config.git;a=blob_plain;f=config.sub;hb=HEAD' 
 ```
+在 Binutils-gdb 2.36 pass 2 里面编译gdb-server 的时候有 `cannot find linux-loongarch-low.o`, 之后 用`--withoutgdb --withoutgdb-server` 先跳过，这个阶段gdb并不重要。
+然而之后又有LD链接库时找不到文件，导师用symbolic link 变相修改了 lib path，编译就通过了。
 
 在GCC pass 2 遇到了比较严重的问题，下周准备解决，或者考虑用官方的二进制build-tools https://github.com/loongson/build-tools。
 ![Screenshot from 2021-07-04 11-39-42](https://user-images.githubusercontent.com/53088781/124392859-a739ec00-dd08-11eb-992e-605a6c9e3d63.png)
