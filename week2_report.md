@@ -15,7 +15,26 @@ The GCC 8.3.0 source package, which Debian 10 uses, is heavily modified for Loon
 The source package contains both old patches in Debian and new patches for LoongArch.   
 All patches are located in `/usr/src/gcc-8/patches`, except for libffi patch, which are located in `/usr/src/gcc-8/` or `/usr/src/gcc-8/libffi`, both of them are the same.  
 Though, not all changes are in patches, there are many files which are directly written and modified for LoongArch. 
-The format for source package is 2.0 and .deb, which is old and can not be processed by dpkg-source. I need to apply patches manually.
+The format for source package is 2.0 and .deb, which is old and can not be processed by dpkg-source. I need to apply patches manually.  
+The sample patch script are as follows:  
+```
+for i in $(cat series); do patch -Np2 -d /usr/src/gcc-8/gcc-8.3.0 < $i; done
+patch -Np1 -d /usr/src/glibc/glibc-2.28 < "patches"
+```
+
+# patch status
+
+All GCC patches have successfully applied.
+Two patches are FAILED in binutils, others already applied:  
+```
+0002-add-fcc-branch-pseudo-instruction-to-cooperate-with-.patch
+VDP2.[]U.[]U-change-into-VDP2.[].[]U.patch
+```
+One patch in glibc can be applied but comment out in series, others already applied:  
+```
+loongarch/0001-add-loongarch-process_elf_file-in-readelflib.c.patch
+```
+
 
 # Trials and failures  
 
