@@ -1,6 +1,6 @@
 # Personal affairs
 
-This week, I am very busy with my course and writting long programs for assignment. Thus, I cactually have taken 3 days off.   
+This week, I am very busy with my course and writting long programs for assignment. Thus, I actually have taken 3 days off.   
 
 # Previous GCC status  
 
