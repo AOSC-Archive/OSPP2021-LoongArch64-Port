@@ -1,3 +1,7 @@
+# general guess about glibc compile failure  
+There are some headers in tools folder in previous version (I mean the GCC 11, binutils 2.36, glibc 2.33 xen0n port ) that contaminated the building environment.   
+I forget to clean tools folder in time or somehow compile them as root. this causes the pass 1 and pass 2 seems to pass, but not working after chroot.  
+
 # GCC status
 
 All patches in GCC are applied successfully.  
@@ -60,3 +64,8 @@ make[2]: *** [../o-iterator.mk:9：/mnt/lfs/sources/glibc/glibc-2.28/build/elf/l
 ```
 I manually comment out the duplicate variable definitions.
 
+7.
+![Screenshot from 2021-07-18 23-07-52](https://user-images.githubusercontent.com/53088781/126079351-7e43a18f-aae7-4b27-a3f0-deb01a5bbe51.png)
+
+This glibc error happens even I start all over again from the beginning in LFS, deleting all previous tools and folders in /mnt/lfs except sources folder.  
+I first guess that the host environment is broken, but other tasks like browsing and playing videos seems fine.  
