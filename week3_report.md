@@ -5,7 +5,7 @@ I forget to clean tools folder in time or somehow compile them as root. this cau
 # GCC status
 
 All patches in GCC are applied successfully.  
-However, based on current status, I need to maintain a somewhat separate fork for GCC LoonArch port since I modified source code a little.
+However, based on current status, I need to maintain a somewhat separate fork for GCC LoongArch port since I modified source code a little.
 
 # Errors and solutions
 
