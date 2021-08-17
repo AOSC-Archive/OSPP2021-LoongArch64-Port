@@ -58,6 +58,7 @@ Also, see the old LFS attachment for basic example of dpkg/status : http://www.l
 - systemd change build script (unset CFLAGS CXXFLAGS) and add loongarch64 patch
 - bzip2 remove /usr/lib/libbz2.a in beyond
 - xz change build script
+- cmake change build script
 
 ## minor change
 
@@ -74,9 +75,9 @@ Also, see the old LFS attachment for basic example of dpkg/status : http://www.l
 `export DPKG_FORCE=overwrite`
 `export PYTHONPATH=/root/.local/lib/python3.9/site-packages`
 
-# dependency and solution
+# errors and solution
 
-- lm-sensors actually also depend on flex
+- lm-sensors actually also depend on flex, following error log indicates that 
 
 ```
 /bin/bison
