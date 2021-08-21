@@ -23,7 +23,6 @@
 
 ## build error
 
-- nethogs compile error  
 - nghttp2 <- jemalloc  
 ```
 src/arena.c:2022:34: error: request for member 'bins_large' in something not a structure or union
@@ -221,18 +220,20 @@ E: Unable to locate package archlinux-keyring
 
 ```
 
-## my change to local ACBS
-### chmod +x *.so 
+# my change to local ACBS
+## chmod +x *.so 
 - idnkit chmod +x /usr/lib/libidnkit.so /usr/lib/libidnkitlite.so
+- ...
 
-### location change
+## location change
 xfsprogs <- inith -> `/usr/lib/loongarch64.../*.so` change to `/usr/lib/*.so`  
 
-### update version and link
+## update version and link
 - file
 - dpkg
 - debianutils
 - config
+- ...
 
 ## potential ACBS improvement
 
