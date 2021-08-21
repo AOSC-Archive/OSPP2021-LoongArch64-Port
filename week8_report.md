@@ -225,18 +225,24 @@ E: Unable to locate package archlinux-keyring
 ### chmod +x *.so 
 - idnkit chmod +x /usr/lib/libidnkit.so /usr/lib/libidnkitlite.so
 
-## potential improvement
+### location change
+xfsprogs <- inith -> `/usr/lib/loongarch64.../*.so` change to `/usr/lib/*.so`  
+
+### update version and link
+- file
+- dpkg
+- debianutils
+- config
+
+## potential ACBS improvement
 
 - breathe change to noarch
 - config package update
 
+## experimental tweak
 gobject-introspection build on loongnix and change DESTDIR, NO deb yet  
 
-debianutils change version and mirror link  
-
-xfsprogs <- inith -> `/usr/lib/loongarch64.../*.so` change to `/usr/lib/*.so`  
-
-liburcu need architecture patch  
+## important warning
 
 - quota-tools warning  
 ```
