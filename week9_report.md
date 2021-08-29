@@ -1,8 +1,13 @@
 # progess for building packages
 
+As of Sunday, number of packages installed on CLFS: 584
+
 ## need LLVM or rustc
 - librsvg -> graphviz -> vala -> gtk3
 - gc -> guile -> graphviz
+
+temp solution: cut librsvg, gc dependencies down
+
 ## gtk-2
 
 before build gtk-2 and after building gdk-pxibuf, run `gdk-pixbuf-query-loaders --update-cache`, otherwise, the following error will appear when building gtk-2  
@@ -22,6 +27,7 @@ I need to move all *.so to /usr/lib
 ## gtk-3
 
 gnutls -> glib-networking ->libsoup -> rest -> gtk-3
+temp solution: postpone rest package and build gtk-3
 
 ## qt-4
 no icu, postgresql
@@ -89,12 +95,19 @@ meson.build did not cover LoongArch, and fall into "none"
 - ghostscript 
 - ijs
 
-
 ## change so permission
 
 - libjpeg-turbo
 - libcork
 - libogg
+- aom
+- libcue
+- libftdi
+- sdl2
+- vulkan-loader
+- libldac
+- openal-soft
+- soxr
 
 ## add custom build script
 
@@ -108,10 +121,10 @@ use `LD_PRELOAD=$PWD/libwacom.so.2` ninja or manually install it and then use AC
 copy new config.*
 
 # potential improvement to abbs tree
-add pyyaml dependency to desktop-base
+add `pyyaml` dependency to desktop-base
 
 
-# useful environment varible
+# potential useful environment varible
 export CMAKE_LIBRARY_PATH=/usr/lib/loongarch64-linux-gnu/
 export LD_LIBRARY_PATH=/usr/lib/loongarch64-linux-gnu/
 export LD_PRELOAD=/usr/lib/nvidia-384/loongarch64-linux-gnu/
