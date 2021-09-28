@@ -51,4 +51,4 @@ I also use [xchroot](https://www.elstel.org/xchroot/#downloads) to enable BuildK
 ![xterm-crop](https://user-images.githubusercontent.com/53088781/134063317-a79704e1-c92b-4df2-ae93-bad27d5bc8ba.png)
 
 I also take a look at qt-5 risc-v patch on Debian, it seems that I do not need to actually write code for it, just register the architecture is enough.  
-However, double-conversion needs to be ported, If I distable it, configure will say `Your C library does not provide sscanf_l or snprintf_l.`
+However, double-conversion needs to be ported, If I disable it, configure will say `Your C library does not provide sscanf_l or snprintf_l.`
